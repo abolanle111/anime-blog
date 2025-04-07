@@ -1,14 +1,15 @@
 import React from "react";
 import Bg from "../assets/bg.png";
-import Akame from "../assets/akame.jpg";
-import AOT from "../assets/AOT.jpg";
-import Demon from "../assets/demon.jpg";
-import Fate from "../assets/fate.jpg";
-import Geass from "../assets/geass.jpg";
-import Toradora from "../assets/toradora.jpg";
+import Akame from "../assets/akame.png";
+import AOT from "../assets/AOT.png";
+import Chance from "../assets/chance.png";
+import Geass from "../assets/geass.png";
+import Stone from "../assets/stone.png";
+import Love from "../assets/love.png";
+import Clippy from "../assets/clippy.png";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons"; // Import your desired icon
+// import { faBars } from "@fortawesome/free-solid-svg-icons"; // Import your desired icon
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons"; // Import your desired icon
 import { faCircleArrowLeft } from "@fortawesome/free-solid-svg-icons"; // Import your desired icon
 import { faCircleArrowRight } from "@fortawesome/free-solid-svg-icons"; // Import your desired icon
@@ -24,15 +25,23 @@ function Home() {
           className="absolute inset-0 w-full h-full object-cover"
         />
 
-        <img
-          src={Fate} // replace with the actual image source
-          alt="clipped-overlay"
-          className="absolute top-0 right-0 h-full w-12 clip-overlay z-20"
-        />
+        {/* Diagonal Clipped Overlay */}
+        <div
+          className="absolute inset-1 z-10"
+          style={{
+            clipPath: "polygon(53% 0, 94% 0, 80% 100%, 38% 100%)",
+          }}
+        >
+          <img
+            src={Clippy} // Replace with the actual image source
+            alt="diagonal-overlay"
+            className=" object-cover"
+          />
+        </div>
 
-        <div className="relative z-10 flex flex-col items-start justify-center gap-6 text-white p-8 ">
+        <div className="relative z-10 flex flex-col items-center justify-center gap-6 text-white p-8 ">
           <h1 className="lg:text-6xl text-3xl lg:font-semi-bold font-medium tracking-widest">
-            Welcome to <br /> Gates
+            Welcome to Gates
           </h1>
           <p className="text-wrap text-zinc-300 leading-6">
             Get the latest news on your favourites animes, manga and manhwa
@@ -49,8 +58,8 @@ function Home() {
             />
             <FontAwesomeIcon icon={faArrowRight} className="text-black " />
           </div>
-          <div className=" bottom-4 left-20">
-            <ul className="text-zinc-200 space-y-1">
+          <div className="relative ">
+            <ul className=" text-zinc-200 space-y-1">
               <li>Action</li>
               <li>Comedy</li>
               <li>Drama</li>
@@ -65,51 +74,63 @@ function Home() {
         <h1 className="font-bold text-2xl border-b-2 mb-4">New & Trendy</h1>
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
           <img
-            src={AOT}
-            alt="Attack on titan"
-            className="h-96 w-full object-cover"
+            src={Akame}
+            alt="Akame ga kill"
+            className="w-full object-cover"
           />
-          <div className="bg-zinc-100 p-5 h-full items-center">
-            <div className="flex gap-4 mb-2">
-              <p className="text-zinc-600">Action</p>
-              <p className=" text-zinc-600">.2 Months Ago</p>
+          <div class="bg-zinc-100 p-5 h-full flex flex-col items-center">
+            <div class="flex w-1/2 justify-between mb-4">
+              <p class="text-zinc-600">Action</p>
+              <p class="text-zinc-600">.2 Months Ago</p>
             </div>
 
-            <h2 className="font-bold text-2xl mb-2">Attack on Titans</h2>
-            <p className="text-zinc-700 text-2xl mb-2">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste,
-              quis. Et, repellendus. Nulla aliquid facere beatae porro! Hic,
-              voluptate nesciunt.
-            </p>
-            <div className="flex justify-between">
-              <p className="text-zinc-600">12 mins read</p>
-              <button className="font-bold">Read full</button>
+            <h2 class="font-bold text-2xl mb-4">Akame ga kill</h2>
+
+            <div class="flex w-1/2 gap-4">
+              <p class="flex-1 text-zinc-700 text-xl">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste,
+                quis. Et, repellendus. Nulla aliquid facere beatae porro! Hic,
+                voluptate nesciunt.
+              </p>
+            </div>
+
+            <div class="flex w-1/2 justify-between mt-4">
+              <p class="text-zinc-600">12 mins read</p>
+              <button class="font-bold text-black hover:underline">
+                Read full
+              </button>
             </div>
           </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center border-t-2 lg:border-t-0">
-          <div className="bg-zinc-100 p-5 h-full items-center">
-            <div className="flex gap-4 mb-2">
-              <p className="text-zinc-600">Fantasy</p>
-              <p className=" text-zinc-600">.2 Months Ago</p>
+        <div class="bg-zinc-100 p-5 h-full flex flex-col items-center">
+            <div class="flex w-1/2 justify-between mb-4">
+              <p class="text-zinc-600">Action</p>
+              <p class="text-zinc-600">.2 Months Ago</p>
             </div>
 
-            <h2 className="font-bold text-2xl mb-2">Akame Ga Kill</h2>
-            <p className="text-zinc-700 mb-2">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste,
-              quis. Et, repellendus. Nulla aliquid facere beatae porro! Hic,
-              voluptate nesciunt.
-            </p>
-            <div className="flex justify-between">
-              <p className="text-zinc-600">10 mins read</p>
-              <button className="font-bold">Read full</button>
+            <h2 class="font-bold text-2xl mb-4">Akame ga kill</h2>
+
+            <div class="flex w-1/2 gap-4">
+              <p class="flex-1 text-zinc-700 text-xl">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste,
+                quis. Et, repellendus. Nulla aliquid facere beatae porro! Hic,
+                voluptate nesciunt.
+              </p>
+            </div>
+
+            <div class="flex w-1/2 justify-between mt-4">
+              <p class="text-zinc-600">12 mins read</p>
+              <button class="font-bold text-black hover:underline">
+                Read full
+              </button>
             </div>
           </div>
           <img
-            src={Akame}
-            alt="akame ga kill"
-            className="h-96 w-full object-cover"
+            src={AOT}
+            alt="attack on titans"
+            className="w-full object-cover"
           />
         </div>
       </section>
@@ -129,61 +150,76 @@ function Home() {
         </div>
 
         <div className="flex flex-col lg:flex-row justify-evenly gap-8">
-          <div>
+          <div class="max-w-sm mx-auto bg-white rounded-sm  overflow-hidden">
+            <img src={AOT} alt="Movie" className="w-full h-82 object-cover" />
+            <div class="p-4 space-y-3">
+              <div class="flex text-sm text-gray-500 space-x-3">
+                <span>History</span>
+                <span>·</span>
+                <span>1 Month Ago</span>
+              </div>
+              <h2 class="text-xl font-bold text-gray-900">Attack On Titan</h2>
+              <p class="text-gray-600">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste
+                nisi libero quibusdam, rerum eius fugit earum. Veniam sit
+                corrupti, consequatur autem quo minus.
+              </p>
+              <div class="flex justify-between items-center text-sm text-gray-500">
+                <span>12 Min Read</span>
+                <a href="/" class="text-black hover:underline font-semibold">
+                  Read Full →
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="max-w-sm mx-auto bg-white rounded-sm overflow-hidden">
+            <img src={Stone} alt="Movie" className="w-full h-82 object-cover" />
+            <div class="p-4 space-y-3">
+              <div class="flex text-sm text-gray-500 space-x-3">
+                <span>History</span>
+                <span>·</span>
+                <span>1 Month Ago</span>
+              </div>
+              <h2 class="text-xl font-bold text-gray-900">Dr Stone</h2>
+              <p class="text-gray-600">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
+                similique reiciendis culpa saepe, ut commodi ad, necessitatibus,
+                accusamus voluptatum atque dolores officia.
+              </p>
+              <div class="flex justify-between items-center text-sm text-gray-500">
+                <span>12 Min Read</span>
+                <a href="/" class="text-black hover:underline font-semibold">
+                  Read Full →
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="max-w-sm mx-auto bg-white rounded-sm overflow-hidden">
             <img
-              src={Fate}
-              alt="Fate Stay night"
-              className="h-96 w-full md:w-full md:h-96 mb-4"
+              src={Chance}
+              alt="Movie"
+              className="w-full h-82 object-cover"
             />
-            <div className="flex gap-4 mb-2">
-              <p className="text-zinc-600">Action</p>
-              <p className=" text-zinc-600">.2 Months Ago</p>
-            </div>
-            <h2 className="font-bold text-2xl mb-2">Fate/Stay Night</h2>
-            <p className="text-zinc-700 text-base mb-2">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste,
-              quis. Et, repellendus. Nulla aliquid facere beatae porro! Hic,
-              voluptate nesciunt.
-            </p>
-            <div className="flex justify-between">
-              <p className="text-zinc-600">12 mins read</p>
-              <button className="font-bold">Read full</button>
-            </div>
-          </div>
-
-          <div>
-            <img src={Geass} alt="code geass" className="h-96 w-full mb-4" />
-            <div className="flex gap-4 mb-2">
-              <p className="text-zinc-600">Action</p>
-              <p className=" text-zinc-600">.2 Months Ago</p>
-            </div>
-            <h2 className="font-bold text-2xl mb-2">Code Geass</h2>
-            <p className="text-zinc-700 text-base mb-2">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste,
-              quis. Et, repellendus. Nulla aliquid facere beatae porro! Hic,
-              voluptate nesciunt.
-            </p>
-            <div className="flex justify-between">
-              <p className="text-zinc-600">12 mins read</p>
-              <button className="font-bold">Read full</button>
-            </div>
-          </div>
-
-          <div>
-            <img src={Demon} alt="demon slayer" className="h-96 w-full mb-4" />
-            <div className="flex gap-4 mb-2">
-              <p className="text-zinc-600">Action</p>
-              <p className=" text-zinc-600">.2 Months Ago</p>
-            </div>
-            <h2 className="font-bold text-2xl mb-2">Demon slayer</h2>
-            <p className="text-zinc-700 text-base mb-2">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste,
-              quis. Et, repellendus. Nulla aliquid facere beatae porro! Hic,
-              voluptate nesciunt.
-            </p>
-            <div className="flex justify-between">
-              <p className="text-zinc-600">12 mins read</p>
-              <button className="font-bold">Read full</button>
+            <div class="p-4 space-y-3">
+              <div class="flex text-sm text-gray-500 space-x-3">
+                <span>History</span>
+                <span>·</span>
+                <span>1 Month Ago</span>
+              </div>
+              <h2 class="text-xl font-bold text-gray-900">Second Chance</h2>
+              <p class="text-gray-600 font-medium">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Repudiandae incidunt cumque doloremque aliquam et beatae,
+                maiores tenetur consectetur laborum dolorum aspernatur vitae.
+              </p>
+              <div class="flex justify-between items-center text-sm text-gray-500">
+                <span>12 Min Read</span>
+                <a href="/" class="text-black hover:underline font-semibold">
+                  Read Full →
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -273,12 +309,12 @@ function Home() {
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 p-4 border-2">
           <div class="flex flex-col items-center text-center">
             <img
-              src={Toradora}
+              src={AOT}
               alt="Main"
               class="w-full h-96 object-cover rounded-lg mb-4"
             />
             <p className="text-zinc-400">1 Month ago</p>
-            <h2 className="text-2xl font-bold">Toradora</h2>
+            <h2 className="text-2xl font-bold">Attack on Titans</h2>
             <p class="text-gray-700 text-base text-left">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br />{" "}
               Labore ex blanditiis sunt nisi optio fugiat deserunt dolorum alias{" "}
@@ -308,7 +344,7 @@ function Home() {
             {/* <!-- Item 2 --> */}
             <div class="flex items-center space-x-4">
               <img
-                src={Demon}
+                src={Stone}
                 alt=""
                 class="w-20 h-20 object-cover rounded-lg"
               />
@@ -339,7 +375,7 @@ function Home() {
             {/* <!-- Item 4 --> */}
             <div class="flex items-center space-x-4">
               <img
-                src={Fate}
+                src={Love}
                 alt=""
                 class="w-20 h-20 object-cover rounded-lg"
               />
@@ -384,7 +420,7 @@ function Home() {
             {/* <!-- Item 2 --> */}
             <div class="flex items-center space-x-4">
               <img
-                src={Demon}
+                src={Stone}
                 alt=""
                 class="w-20 h-20 object-cover rounded-lg"
               />
@@ -415,7 +451,7 @@ function Home() {
             {/* <!-- Item 4 --> */}
             <div class="flex items-center space-x-4">
               <img
-                src={Fate}
+                src={Love}
                 alt=""
                 class="w-20 h-20 object-cover rounded-lg"
               />

@@ -1,10 +1,9 @@
 import React from "react";
-import Header from "../default/Header";
+// import Header from "../default/Header";
 import Hero from "../assets/Hero.png";
-import Akame from "../assets/akame.jpg";
-import AOT from "../assets/AOT.jpg";
-import Demon from "../assets/demon.jpg";
-import Geass from "../assets/geass.jpg";
+import Akame from "../assets/akame.png";
+import AOT from "../assets/AOT.png";
+import Geass from "../assets/geass.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleArrowLeft } from "@fortawesome/free-solid-svg-icons"; // Import your desired icon
 import { faCircleArrowRight } from "@fortawesome/free-solid-svg-icons"; // Import your desired icon
@@ -164,6 +163,19 @@ const Blogdetail = () => {
                 elements, and themes of warfare and rebellion.
               </p>
             </div>
+          </div>
+        </div>
+
+        <div className="flex justify-between border-b-2 mb-6">
+          <h2 className="pt-4 font-semibold text-lg tracking-wide">
+            MORE BLOGS:
+          </h2>
+          <div>
+            <FontAwesomeIcon
+              icon={faCircleArrowLeft}
+              className="mr-2 text-zinc-300 text-lg"
+            />
+            <FontAwesomeIcon icon={faCircleArrowRight} className="text-lg " />
           </div>
         </div>
 

@@ -1,14 +1,18 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import React, { useState } from "react";
+import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import "./App.css";
 import Header from "./default/Header";
 import Home from "./pages/Home";
-import Footer from "./default/Footer";
-import Signup from "./pages/Signup";
+// import Footer from "./default/Footer";
+import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
 import Blogdetail from "./pages/Blogdetail";
+import Dashboard from "./pages/Dashboard";
+
 
 function App() {
+  const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
+
   return (
     <div>
       <Router>
@@ -18,8 +22,9 @@ function App() {
           <Routes>
             <Route path="/" exact element={<Home />} />
             <Route path="/blog" element={<Blogdetail />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/login" element={<Login isAuth={isAuth} setIsAuth={setIsAuth} />} />
+            <Route path="/dashboard" element={<Dashboard />} />
           </Routes>
         </div>
       </Router>
